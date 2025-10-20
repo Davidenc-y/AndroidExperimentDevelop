@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <!-- 任务1：线性布局按钮 -->
+    <Button
+        android:id="@+id/btn_task1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="任务1：线性布局（4×4文本网格）"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp" />
+
+    <!-- 任务2：表格布局按钮 -->
+    <Button
+        android:id="@+id/btn_task2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="任务2：表格布局（功能+快捷键）"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/btn_task1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- 任务3：约束布局1（计算器）按钮 -->
+    <Button
+        android:id="@+id/btn_task3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="任务3：约束布局1（计算器界面）"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/btn_task2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- 任务4：约束布局2（太空站）按钮 -->
+    <Button
+        android:id="@+id/btn_task4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="任务4：约束布局2（太空站旅行界面）"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/btn_task3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:fitsSystemWindows="true"-->
+<!--    tools:context=".MainActivity">-->
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fitsSystemWindows="true">-->
+
+<!--        <com.google.android.material.appbar.MaterialToolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize" />-->
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+<!--    <include layout="@layout/content_main" />-->
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fab"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|end"-->
+<!--        android:layout_marginEnd="@dimen/fab_margin"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        app:srcCompat="@android:drawable/ic_dialog_email" />-->
+
+<!--</androidx.coordinatorlayout.widget.CoordinatorLayout>-->

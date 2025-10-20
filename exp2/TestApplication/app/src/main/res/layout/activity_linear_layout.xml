@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#f0f0f0">
+
+    <!-- 第1行 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="One,One"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+        android:layout_marginEnd="8dp"
+        android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Two,One"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Three,One"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Four,One"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <!-- 第2行 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="One,Two"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Two,Two"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Three,Two"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Four,Two"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <!-- 第3行 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="One,Three"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Two,Three"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Three,Three"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Four,Three"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <!-- 第4行 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="One,Four"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Two,Four"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Three,Four"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Four,Four"
+            android:textSize="18sp"
+            android:background="@drawable/text_border"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>

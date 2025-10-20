@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- 标题：ConstraintLayoutTest -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calculator_title"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 输入框：显示0.0 -->
+    <TextView
+        android:id="@+id/tv_input"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/input_bg"
+        android:gravity="end|center_vertical"
+        android:paddingEnd="16dp"
+        android:text="0.0"
+        android:textSize="24sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        android:layout_marginTop="16dp" />
+
+    <!-- 第1行按钮：7、8、9、/ -->
+    <Button
+        android:id="@+id/btn_7"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/num_7"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_input"
+        app:layout_constraintEnd_toStartOf="@id/btn_8"
+        android:layout_marginTop="20dp"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btn_8"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/num_8"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/btn_7"
+        app:layout_constraintTop_toBottomOf="@id/tv_input"
+        app:layout_constraintEnd_toStartOf="@id/btn_9"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btn_9"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/num_9"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/btn_8"
+        app:layout_constraintTop_toBottomOf="@id/tv_input"
+        app:layout_constraintEnd_toStartOf="@id/btn_divide"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btn_divide"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/op_divide"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/btn_9"
+        app:layout_constraintTop_toBottomOf="@id/tv_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
+
+
+    <!-- 第2行按钮：4、5、6、* -->
+    <Button
+        android:id="@+id/btn_4"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/num_4"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_7"
+        app:layout_constraintEnd_toStartOf="@id/btn_5"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btn_5"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/num_5"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/btn_4"
+        app:layout_constraintTop_toBottomOf="@id/btn_7"
+        app:layout_constraintEnd_toStartOf="@id/btn_6"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btn_6"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/num_6"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/btn_5"
+        app:layout_constraintTop_toBottomOf="@id/btn_7"
+        app:layout_constraintEnd_toStartOf="@id/btn_multiply"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btn_multiply"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/op_multiply"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/btn_6"
+        app:layout_constraintTop_toBottomOf="@id/btn_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_weight="1" />
+
+
+    <!-- 第3行按钮：1、2、3、- -->
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/num_1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_4"
+        app:layout_constraintEnd_toStartOf="@id/btn_2"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/num_2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/btn_1"
+        app:layout_constraintTop_toBottomOf="@id/btn_4"
+        app:layout_constraintEnd_toStartOf="@id/btn_3"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btn_3"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/num_3"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/btn_2"
+        app:layout_constraintTop_toBottomOf="@id/btn_4"
+        app:layout_constraintEnd_toStartOf="@id/btn_subtract"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btn_subtract"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/op_subtract"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/btn_3"
+        app:layout_constraintTop_toBottomOf="@id/btn_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_weight="1" />
+
+
+    <!-- 第4行按钮：0、.、=、+ -->
+    <Button
+        android:id="@+id/btn_0"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/num_0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_1"
+        app:layout_constraintEnd_toStartOf="@id/btn_dot"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btn_dot"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/op_dot"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/btn_0"
+        app:layout_constraintTop_toBottomOf="@id/btn_1"
+        app:layout_constraintEnd_toStartOf="@id/btn_equal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btn_equal"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/op_equal"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/btn_dot"
+        app:layout_constraintTop_toBottomOf="@id/btn_1"
+        app:layout_constraintEnd_toStartOf="@id/btn_add"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="@string/op_add"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/btn_equal"
+        app:layout_constraintTop_toBottomOf="@id/btn_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_weight="1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

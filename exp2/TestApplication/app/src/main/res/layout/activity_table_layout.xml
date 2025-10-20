@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:stretchColumns="1"
+    android:background="@android:color/black">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_column="1"
+            android:text="Hello TableLayout"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/white"
+            android:padding="8dp" />
+    </TableRow>
+
+    <!-- 第1行：Open... + Ctrl-O -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:background="@drawable/border_top">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_add"
+            android:contentDescription="Open"
+            app:tint="@android:color/white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Open..."
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ctrl-O"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray" />
+    </TableRow>
+
+    <!-- 第2行：Save... + Ctrl-S -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_save"
+            android:contentDescription="Save"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save..."
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ctrl-S"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray" />
+    </TableRow>
+
+    <!-- 第3行：Save As.... + Ctrl-Shift-S -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_edit"
+            android:contentDescription="Save As"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save As...."
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ctrl-Shift-S"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray" />
+    </TableRow>
+
+    <!-- 第4行：Import... + Ctrl-E（带X图标 + 上边框） -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:background="@drawable/border_top"
+        tools:ignore="ExtraText">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_delete"
+            tools:ignore="ExtraText" />
+        android:contentDescription="Import"
+        android:tint="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Import..."
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ctrl-E"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray" />
+    </TableRow>
+
+    <!-- 第5行：Export... + Ctrl-E（带X图标 + 下边框） -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:background="@drawable/border_bottom">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_delete"
+        android:contentDescription="Export"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Export..."
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ctrl-E"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray" />
+    </TableRow>
+
+    <!-- 第6行：Quit -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="Quit"
+            app:tint="@android:color/white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quit"
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ctrl-Q"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray" />
+    </TableRow>
+
+</TableLayout>
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:padding="16dp"-->
+<!--    android:stretchColumns="1">-->
+
+<!--    &lt;!&ndash; 标题行：Hello TableLayout &ndash;&gt;-->
+<!--    <TableRow-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:background="#000000">-->
+
+<!--        <TextView-->
+<!--            android:layout_column="1"-->
+<!--            android:text="Hello TableLayout"-->
+<!--            android:textSize="24sp"-->
+<!--            android:textStyle="bold" />-->
+<!--    </TableRow>-->
+
+<!--    &lt;!&ndash; 第1行：Open... + Ctrl-O &ndash;&gt;-->
+<!--    <TableRow-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginVertical="8dp">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@android:drawable/ic_menu_add"-->
+<!--            android:contentDescription="Open" />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Open..."-->
+<!--            android:textSize="18sp"-->
+<!--            android:layout_marginStart="16dp" />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Ctrl-O"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@android:color/darker_gray" />-->
+<!--    </TableRow>-->
+
+<!--    &lt;!&ndash; 第2行：Save... + Ctrl-S &ndash;&gt;-->
+<!--    <TableRow-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginVertical="8dp">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@android:drawable/ic_menu_save"-->
+<!--            android:contentDescription="Save" />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Save..."-->
+<!--            android:textSize="18sp"-->
+<!--            android:layout_marginStart="16dp" />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Ctrl-S"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@android:color/darker_gray" />-->
+<!--    </TableRow>-->
+
+<!--    &lt;!&ndash; 第3行：Save As.... + Ctrl-Shift-S &ndash;&gt;-->
+<!--    <TableRow-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginVertical="8dp">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@android:drawable/ic_menu_edit"-->
+<!--            android:contentDescription="Save As" />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Save As...."-->
+<!--            android:textSize="18sp"-->
+<!--            android:layout_marginStart="16dp" />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Ctrl-Shift-S"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@android:color/darker_gray" />-->
+<!--    </TableRow>-->
+
+<!--    &lt;!&ndash; 第4行：Import... + Ctrl-E &ndash;&gt;-->
+<!--    <TableRow-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginVertical="8dp"-->
+<!--        android:background="@drawable/border_top">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@android:drawable/ic_menu_upload"-->
+<!--            android:contentDescription="Import" />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Import..."-->
+<!--            android:textSize="18sp"-->
+<!--            android:layout_marginStart="16dp" />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Ctrl-E"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@android:color/darker_gray" />-->
+<!--    </TableRow>-->
+
+<!--    &lt;!&ndash; 第5行：Export... + Ctrl-E（文档标注X Export...，此处按需求调整） &ndash;&gt;-->
+<!--    <TableRow-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginVertical="8dp"-->
+<!--        android:background="@drawable/border_bottom">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@android:drawable/ic_menu_agenda"-->
+<!--            android:contentDescription="Export" />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Export..."-->
+<!--            android:textSize="18sp"-->
+<!--            android:layout_marginStart="16dp" />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Ctrl-E"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@android:color/darker_gray" />-->
+<!--    </TableRow>-->
+
+<!--    &lt;!&ndash; 第6行：Quit &ndash;&gt;-->
+<!--    <TableRow-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginVertical="8dp">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@android:drawable/ic_menu_close_clear_cancel"-->
+<!--            android:contentDescription="Quit" />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Quit"-->
+<!--            android:textSize="18sp"-->
+<!--            android:layout_marginStart="16dp" />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Ctrl-Q"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@android:color/darker_gray" />-->
+<!--    </TableRow>-->
+
+<!--</TableLayout>-->
