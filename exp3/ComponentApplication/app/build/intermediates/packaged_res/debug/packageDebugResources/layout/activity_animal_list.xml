@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 主布局：仅包含一个ListView -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 返回主界面按钮 -->
+    <Button
+        android:id="@+id/btn_back_to_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="返回主界面"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="@android:color/white"/>
+
+    <ListView
+        android:id="@+id/lv_animal_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/darker_gray"
+    android:dividerHeight="1dp"/>
+
+
+
+</LinearLayout>
