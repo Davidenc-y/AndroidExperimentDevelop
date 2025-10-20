@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 确保根标签是 selector，命名空间正确 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 选中状态：红色背景 -->
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#FF0000" /> <!-- 红色 -->
+        </shape>
+    </item>
+    <!-- 选中状态：用明确的蓝色，不嵌套复杂 shape（避免解析异常） -->
+    <item
+        android:state_activated="true"
+        android:drawable="@color/blue_selected" /> <!-- 用颜色资源，更稳定 -->
+
+    <!-- 默认状态：白色背景 -->
+    <item
+        android:state_activated="false"
+        android:drawable="@color/white" />
+</selector>
