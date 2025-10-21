@@ -27,7 +27,7 @@ import java.util.Map;
 public class AnimalListActivity extends AppCompatActivity {
 
     // 1. 数据准备
-    private final String[] animalNames = {"老虎", "狮子", "猴子", "大象", "猫", "狗"};
+    private final String[] animalNames = {"Tiger", "Lion", "Monkey", "Elephant", "Cat", "Dog"};
     private final int[] animalImages = {
             R.drawable.tiger,
             R.drawable.lion,
@@ -41,6 +41,7 @@ public class AnimalListActivity extends AppCompatActivity {
     private static final String CHANNEL_ID = "animal_channel";
     private ListView lvAnimalList;
     private Button btnBackToMain;
+    private Button btnDynamicAnimal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,8 @@ public class AnimalListActivity extends AppCompatActivity {
 
         lvAnimalList = findViewById(R.id.lv_animal_list);
         btnBackToMain = findViewById(R.id.btn_back_to_main);
+        btnDynamicAnimal = findViewById(R.id.btn_dynamic_animal); // 新增：绑定底部按钮
+        btnDynamicAnimal.setText("Please select"); // 新增：设置初始文本
 
         // 2. 适配数据到SimpleAdapter
         List<Map<String, Object>> dataList = new ArrayList<>();
@@ -82,9 +85,11 @@ public class AnimalListActivity extends AppCompatActivity {
                 // 显示Toast
                 Toast.makeText(
                         AnimalListActivity.this,
-                        "目标名称：" + selectedAnimal + (isSelected ? "（选中）" : "（取消选中）"),
+                        "Target：" + selectedAnimal + (isSelected ? "（Selected）" : "（Unselected）"),
                         Toast.LENGTH_LONG
                 ).show();
+
+                btnDynamicAnimal.setText(selectedAnimal);
             }
         });
 

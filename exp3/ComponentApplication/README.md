@@ -20,41 +20,41 @@
    ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="12dp"
-        android:gravity="center_vertical"
-        android:background="@drawable/item_background"
-        android:clickable="false">
-
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical"
+    android:background="@drawable/item_background"
+    android:clickable="false">
+    
+        <TextView
+        android:id="@+id/tv_animal_name"
+        android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:layout_marginEnd="15dp"/>
+    
         <ImageView
         android:id="@+id/iv_animal"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:scaleType="fitCenter"
-        android:layout_marginEnd="15dp"/>
-
-        <TextView
-        android:id="@+id/tv_animal_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textColor="@android:color/black"/>
-
-        </LinearLayout>
+        android:scaleType="fitCenter"/>
+    
+    </LinearLayout>
    ```
 
 2. **编写主布局 res/layout/activity_animal_list.xml**
    根布局为 LinearLayout，包含 ListView 组件：
    ```xml
-   <?xml version="1.0" encoding="utf-8"?>
-    <!-- 主布局：仅包含一个ListView -->
+    <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
         <!-- 返回主界面按钮 -->
         <Button
             android:id="@+id/btn_back_to_main"
@@ -66,27 +66,39 @@
             android:layout_margin="10dp"
             android:backgroundTint="#4CAF50"
             android:textColor="@android:color/white"/>
-
+    
+        <!-- 动物列表 -->
         <ListView
             android:id="@+id/lv_animal_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"/>
-
-</LinearLayout>
+            android:dividerHeight="1dp"/>
+    
+        <!-- 底部动态文本按钮（文本随选中动物变化） -->
+        <Button
+            android:id="@+id/btn_dynamic_animal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:backgroundTint="#9E9E9E"
+            android:textColor="@android:color/white"/>
+    
+    </LinearLayout>
    ```
 
 3. **编写 Java 逻辑代码（AnimalListActivity.java）**
    初始化动物数据、设置 SimpleAdapter、处理 item 点击事件（弹 Toast + 发通知）：
    ```java
-    package com.example.componentapplication;
-
+   package com.example.componentapplication;
+    
     import androidx.annotation.RequiresPermission;
     import androidx.appcompat.app.AppCompatActivity;
     import androidx.core.app.NotificationCompat;
     import androidx.core.app.NotificationManagerCompat;
-
+    
     import android.Manifest;
     import android.app.NotificationChannel;
     import android.app.NotificationManager;
@@ -100,16 +112,16 @@
     import android.widget.ListView;
     import android.widget.SimpleAdapter;
     import android.widget.Toast;
-
+    
     import java.util.ArrayList;
     import java.util.HashMap;
     import java.util.List;
     import java.util.Map;
-
+    
     public class AnimalListActivity extends AppCompatActivity {
-
+    
         // 1. 数据准备
-        private final String[] animalNames = {"老虎", "狮子", "猴子", "大象", "猫", "狗"};
+        private final String[] animalNames = {"Tiger", "Lion", "Monkey", "Elephant", "Cat", "Dog"};
         private final int[] animalImages = {
                 R.drawable.tiger,
                 R.drawable.lion,
@@ -118,20 +130,23 @@
                 R.drawable.cat,
                 R.drawable.dog
         };
-
+    
         // 通知相关配置
         private static final String CHANNEL_ID = "animal_channel";
         private ListView lvAnimalList;
         private Button btnBackToMain;
-
+        private Button btnDynamicAnimal;
+    
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_animal_list);
-
+    
             lvAnimalList = findViewById(R.id.lv_animal_list);
             btnBackToMain = findViewById(R.id.btn_back_to_main);
-
+            btnDynamicAnimal = findViewById(R.id.btn_dynamic_animal); // 新增：绑定底部按钮
+            btnDynamicAnimal.setText("Please select"); // 新增：设置初始文本
+    
             // 2. 适配数据到SimpleAdapter
             List<Map<String, Object>> dataList = new ArrayList<>();
             for (int i = 0; i < animalNames.length; i++) {
@@ -140,7 +155,7 @@
                 itemMap.put("name", animalNames[i]);    // 绑定名称
                 dataList.add(itemMap);
             }
-
+    
             // 3. 创建SimpleAdapter，关联数据与列表项布局
             SimpleAdapter adapter = new SimpleAdapter(
                     this,
@@ -149,27 +164,29 @@
                     new String[]{"image", "name"},  // 数据key
                     new int[]{R.id.iv_animal, R.id.tv_animal_name}  // 布局控件ID
             );
-
+    
             lvAnimalList.setAdapter(adapter);
-
+    
             lvAnimalList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     String selectedAnimal = animalNames[position];
-
+    
                     // 切换选中状态（点击一次选中，再点击取消）
                     boolean isSelected = !view.isSelected();
                     view.setSelected(isSelected); // 关键：更新状态
-
+    
                     // 显示Toast
                     Toast.makeText(
                             AnimalListActivity.this,
-                            "目标名称：" + selectedAnimal + (isSelected ? "（选中）" : "（取消选中）"),
+                            "Target：" + selectedAnimal + (isSelected ? "（Selected）" : "（Unselected）"),
                             Toast.LENGTH_LONG
                     ).show();
+    
+                    btnDynamicAnimal.setText(selectedAnimal);
                 }
             });
-
+    
             // 返回主界面按钮点击事件
             btnBackToMain.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -180,11 +197,11 @@
                     finish(); // 关闭当前Activity，避免返回栈堆积
                 }
             });
-
+    
             // 初始化通知渠道（Android 8.0+必需）
             createNotificationChannel();
         }
-
+    
         // 创建通知渠道（适配Android 8.0及以上）
         private void createNotificationChannel() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -198,7 +215,7 @@
                 manager.createNotificationChannel(channel);
             }
         }
-
+    
         // （4）发送通知：图标为应用图标，标题为列表项内容
         @RequiresPermission(Manifest.permission.POST_NOTIFICATIONS)
         private void sendNotification(String animalName) {
@@ -207,7 +224,7 @@
             PendingIntent pendingIntent = PendingIntent.getActivity(
                     this, 0, intent, PendingIntent.FLAG_IMMUTABLE
             );
-
+    
             // 构建通知
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                     .setSmallIcon(R.mipmap.ic_launcher)  // （4）通知图标：应用程序图标
@@ -216,7 +233,7 @@
                     .setContentIntent(pendingIntent)
                     .setAutoCancel(true)  // 点击后自动取消
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
+    
             // 发送通知
             NotificationManagerCompat.from(this).notify(1, builder.build());
         }

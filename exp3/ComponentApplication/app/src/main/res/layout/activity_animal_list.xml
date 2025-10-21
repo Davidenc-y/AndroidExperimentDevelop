@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 主布局：仅包含一个ListView -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,13 +16,23 @@
         android:backgroundTint="#4CAF50"
         android:textColor="@android:color/white"/>
 
+    <!-- 动物列表 -->
     <ListView
         android:id="@+id/lv_animal_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:divider="@android:color/darker_gray"
-    android:dividerHeight="1dp"/>
+        android:dividerHeight="1dp"/>
 
-
+    <!-- 底部动态文本按钮（文本随选中动物变化） -->
+    <Button
+        android:id="@+id/btn_dynamic_animal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:backgroundTint="#9E9E9E"
+        android:textColor="@android:color/white"/>
 
 </LinearLayout>
